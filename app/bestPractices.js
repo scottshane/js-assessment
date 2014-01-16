@@ -16,10 +16,11 @@ define(function() {
     },
 
     functions : function(flag) {
+        var getValue;
       if (flag) {
-        var getValue = function getValue() { return 'a'; }
+        getValue = function getValue() { return 'a'; };
       } else {
-        var getValue = function getValue() { return 'b'; }
+        getValue = function getValue() { return 'b'; };
       }
 
       return getValue();
@@ -30,7 +31,7 @@ define(function() {
     },
 
     identity : function(val1, val2) {
-        return (val1 === val2)
+        return (val1 === val2);
     }
   };
 });

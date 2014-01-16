@@ -1,3 +1,4 @@
+/*jshint laxcomma:true*/
 if (typeof define !== 'function') { var define = require('amdefine')(module); }
 
 define(function() {
@@ -9,7 +10,7 @@ define(function() {
                 return i;
             }
         }
-        return -1
+        return -1;
     },
 
     sum : function(arr) {
@@ -22,7 +23,7 @@ define(function() {
         
         //ECMA5
         return arr.reduce(function (p, c, i, a) {
-            return (p + c)
+            return (p + c);
         });
 
     },
@@ -33,19 +34,20 @@ define(function() {
 
         for (i = 0; i < len; i += 1) {
             if( arr[i] === item ) {
-                arr.splice(i, 1)
+                arr.splice(i, 1);
             }
-        };
+        }
         return arr;
     },
 
     removeWithoutCopy : function(arr, item) {
-        var arr     = arr.sort()
-            , len   = arr.length
+          var len   = arr.length
             , begin = null
             , end   = null
             , i;
         
+        (arr.sort());
+            
         for (i = 0; i <len; i+=1) {
             if(arr[i] === item) {
                if(begin === null) {
@@ -54,9 +56,9 @@ define(function() {
                 end = i;
                }
             }
-        };
+        }
 
-        arr.splice(begin, end)
+        arr.splice(begin, end);
         return arr;
     },
 
@@ -90,30 +92,32 @@ define(function() {
     },
 
     count : function(arr, item) {
-        var arr     = arr.sort()
-            , len   = arr.length
+        var len     = arr.length
             , count = 0
             , i;
+
+        (arr.sort());
 
         for (i = 0; i < len; i+=1) {
             if(arr[i] === item) {
                 count += 1;
             }
-        };
+        }
         return count;
     },
 
     duplicates : function(arr) {
-        var arr          = arr.sort()
-            , len        = arr.length
-            , duplicates = []
+        var duplicates = []
+            , len = arr.length
             , i;
-
+        
+        (arr.sort()); 
+        
         for (i = 0; i < len; i += 1) {
             if(arr[i+1] === arr[i] && duplicates.indexOf(arr[i]) === -1) {
                  duplicates.push(arr[i]);
             }
-        };
+        }
         return duplicates;
     },
 
@@ -129,9 +133,9 @@ define(function() {
         // return result;
     
         //ecma5
-        return result = arr.map(function (e, i, a) {
+        return arr.map(function (e, i, a) {
             return e * e; 
-        })
+        });
 
     },
 
