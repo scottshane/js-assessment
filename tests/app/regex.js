@@ -52,7 +52,7 @@ define([
       expect(answers.isUSD('$20,933,209.93')).to.eql(true);
       expect(answers.isUSD('$20,933,209')).to.eql(true);
       expect(answers.isUSD('$459,049,393.21')).to.eql(true);
-      expect(answers.isUSD('34,344.34')).to.eql(false);
+     expect(answers.isUSD('34,344.34')).to.eql(false);
       expect(answers.isUSD('$,344.34')).to.eql(false);
       expect(answers.isUSD('$34,344.3')).to.eql(false);
       expect(answers.isUSD('$34,344.344')).to.eql(false);
